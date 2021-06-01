@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class PlayerController : MonoBehaviour
-{
+
+
+public class PlayerController : MonoBehaviour{
 
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
 
+	
 	private float movementX;
 	private float movementY;
 
@@ -19,16 +21,16 @@ public class PlayerController : MonoBehaviour
 	private int count;
 
 	// At the start of the game..
-	void Start()
-	{
+	void Start(){
+
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
 		// Set the count to zero 
-		count = 0;
+		count = 5;
 
 		SetCountText();
-
+	
 		// Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
 		winTextObject.SetActive(false);
 	}
@@ -49,30 +51,34 @@ public class PlayerController : MonoBehaviour
 			other.gameObject.SetActive(false);
 
 			// Add one to the score variable 'count'
-			count = count + 1;
+			count = count - 1;
 
 			// Run the 'SetCountText()' function (see below)
 			SetCountText();
+
+			
 		}
 	}
 
-	void OnMove(InputValue value)
-	{
+	void OnMove(InputValue value){
+
 		Vector2 v = value.Get<Vector2>();
 
 		movementX = v.x;
 		movementY = v.y;
 	}
 
-	void SetCountText()
-	{
-		countText.text = "Count: " + count.ToString();
+	void SetCountText(){
 
-		if (count >= 7)
-		{
+		countText.text = " Faltam apanhar pickUps: " + count.ToString();
+
+		if (count == 0){
+
+			countText.text ="";
 			// Set the text value of your 'winText'
 			winTextObject.SetActive(true);
 		}
 	}
+
 
 }
