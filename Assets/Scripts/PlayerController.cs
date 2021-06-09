@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour{
@@ -31,8 +31,7 @@ public class PlayerController : MonoBehaviour{
 
 		SetCountText();
 	
-		// Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
-		winTextObject.SetActive(false);
+		
 	}
 
 	void FixedUpdate()
@@ -74,9 +73,7 @@ public class PlayerController : MonoBehaviour{
 
 		if (count == 0){
 
-			countText.text ="";
-			// Set the text value of your 'winText'
-			winTextObject.SetActive(true);
+			SceneManager.LoadScene(2);
 		}
 	}
 
