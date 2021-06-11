@@ -6,7 +6,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerController : MonoBehaviour{
+public class PlayerController : MonoBehaviour
+{
 
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour{
 	private int count;
 
 	// At the start of the game..
-	void Start(){
+	void Start()
+	{
 
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
@@ -59,7 +61,8 @@ public class PlayerController : MonoBehaviour{
 		}
 	}
 
-	void OnMove(InputValue value){
+	void OnMove(InputValue value)
+	{
 
 		Vector2 v = value.Get<Vector2>();
 
@@ -67,7 +70,8 @@ public class PlayerController : MonoBehaviour{
 		movementY = v.y;
 	}
 
-	void SetCountText(){
+	void SetCountText()
+	{
 
 		countText.text = " Faltam apanhar pickUps: " + count.ToString();
 

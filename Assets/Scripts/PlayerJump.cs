@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour {
+public class PlayerJump : MonoBehaviour
+{
  
     //variables 
     Rigidbody player; 
@@ -11,23 +12,23 @@ public class PlayerJump : MonoBehaviour {
  
  
     
-    void Start () {
+    void Start ()
+    {
         player = GetComponent<Rigidbody> ();
         onGround = true;
     }
  
 
-    void Update () {
+    void Update ()
+    {
         if (Input.GetButton("Jump") && onGround == true) {
             //adds force to player on the jump, change velocity in jumps here!
             player.velocity = new Vector3( 0f, jumpForce, 0f);
             onGround = false;
         }
-    }
- 
-    void OnCollisionEnter(Collision other) {
-        //Tag the plane object as "Ground" to work with colliders
-        if(other.gameObject.CompareTag("Ground")){
+
+        if (player.velocity.y == 0)
+        {
             onGround = true;
         }
     }
