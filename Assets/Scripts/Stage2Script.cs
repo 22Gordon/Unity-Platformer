@@ -11,6 +11,7 @@ public class Stage2Script : MonoBehaviour
 
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
+	public bool checkpoint = false;
 	public TextMeshProUGUI countText;
 	public GameObject gameObjectToActivate; 
 
@@ -46,7 +47,14 @@ public class Stage2Script : MonoBehaviour
 
 		if (rb.transform.position.y <= -4)
 		{
-			SceneManager.LoadScene(3);
+			if(checkpoint)
+            {
+				rb.transform.position = new Vector3(11.25f, 2.52f, 41.26f);
+			}
+			else
+            {
+				SceneManager.LoadScene(3);
+			}
 		}
 	}
 
@@ -56,7 +64,7 @@ public class Stage2Script : MonoBehaviour
 		if (other.gameObject.CompareTag("PickUp"))
 		{
 			other.gameObject.SetActive(false);
-
+			checkpoint = true;
 
 			countText.text = " Find the end ";
             gameObjectToActivate.SetActive(true);
