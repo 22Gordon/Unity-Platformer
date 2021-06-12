@@ -12,7 +12,7 @@ public class Stage2Script : MonoBehaviour
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
 	public TextMeshProUGUI countText;
-	public GameObject winTextObject;
+	public GameObject gameObjectToActivate; 
 
 	
 	private float movementX;
@@ -59,7 +59,7 @@ public class Stage2Script : MonoBehaviour
 
 
 			countText.text = " Find the end ";
-           
+            gameObjectToActivate.SetActive(true);
 
 			
 		}

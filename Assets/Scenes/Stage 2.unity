@@ -3855,7 +3855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1372726854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5567,4 +5567,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   countText: {fileID: 1636627148}
-  winTextObject: {fileID: 0}
+  gameObjectToActivate: {fileID: 1372726853}
