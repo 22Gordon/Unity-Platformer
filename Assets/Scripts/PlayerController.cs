@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
 		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
 		rb.AddForce(movement * speed);
+
+		if (rb.transform.position.y <= -4)
+		{
+			SceneManager.LoadScene(1);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -56,8 +61,6 @@ public class PlayerController : MonoBehaviour
 
 			// Run the 'SetCountText()' function (see below)
 			SetCountText();
-
-			
 		}
 	}
 
@@ -81,5 +84,8 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-
+	void OnFall()
+    {
+		
+	}
 }
