@@ -13,6 +13,7 @@ public class Stage4Script : MonoBehaviour
 	public float speed;
 	public bool checkpoint = false;
 	public TextMeshProUGUI countText;
+	public GameObject gameObjectToActivate;
 	
 
 	
@@ -31,7 +32,7 @@ public class Stage4Script : MonoBehaviour
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
-		
+		count = 16;
 
 		SetCountText();
 	
@@ -66,7 +67,13 @@ public class Stage4Script : MonoBehaviour
 			other.gameObject.SetActive(false);
 			checkpoint = true;
 
-			countText.text = " Find the end ";
+			count = count - 1;
+
+			SetCountText();
+
+			if(count == 1){
+				gameObjectToActivate.SetActive(false);
+			}
             
 
 			
@@ -89,7 +96,12 @@ public class Stage4Script : MonoBehaviour
 	void SetCountText()
 	{
 
-		countText.text = " Find the golden pickup before end the level ";
+		countText.text = " Faltam apanhar pickUps: " + count.ToString();
+
+		if (count == 0){
+
+			SceneManager.LoadScene(0);
+		}
 
 	
 	}

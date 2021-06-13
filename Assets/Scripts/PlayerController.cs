@@ -24,10 +24,9 @@ public class PlayerController : MonoBehaviour
 	void Start()
 	{
 
-		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
-		// Set the count to zero 
+		
 		count = 5;
 
 		SetCountText();
@@ -50,15 +49,15 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		// ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
+		
 		if (other.gameObject.CompareTag("PickUp"))
 		{
 			other.gameObject.SetActive(false);
 
-			// Add one to the score variable 'count'
+			
 			count = count - 1;
 
-			// Run the 'SetCountText()' function (see below)
+			// Run the 'SetCountText()' function 
 			SetCountText();
 		}
 	}
