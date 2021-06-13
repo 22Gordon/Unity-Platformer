@@ -53,7 +53,7 @@ public class Stage4Script : MonoBehaviour
 			}
 			else
             {
-				SceneManager.LoadScene(3);
+				SceneManager.LoadScene(7);
 			}
 		}
 	}

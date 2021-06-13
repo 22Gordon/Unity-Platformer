@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
 	public TextMeshProUGUI countText;
-	public GameObject winTextObject;
-
+	
 	
 	private float movementX;
 	private float movementY;
