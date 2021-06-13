@@ -40,6 +40,10 @@ public class Stage3Script : MonoBehaviour{
 		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
 		rb.AddForce(movement * speed);
+
+		if(Input.GetKeyDown(KeyCode.H)){
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)

@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour
 		{
 			SceneManager.LoadScene(1);
 		}
+
+		if(Input.GetKeyDown(KeyCode.H)){
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)

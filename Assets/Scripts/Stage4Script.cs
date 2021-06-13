@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
+
 public class Stage4Script : MonoBehaviour
 {
 
@@ -49,6 +50,10 @@ public class Stage4Script : MonoBehaviour
 		if (rb.transform.position.y <= -4)
 		{
 			SceneManager.LoadScene(7);
+		}
+
+		if(Input.GetKeyDown(KeyCode.H)){
+			SceneManager.LoadScene(0);
 		}
 	}
 
