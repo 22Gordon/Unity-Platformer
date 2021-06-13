@@ -75,6 +75,10 @@ public class Stage4Script : MonoBehaviour
         if(other.gameObject.CompareTag("Speed")){
             speed = 40;
         }
+
+		if(other.gameObject.CompareTag("Slow")){
+			speed = 20;
+		}
 	}
 
 	void OnMove(InputValue value)
