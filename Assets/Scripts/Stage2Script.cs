@@ -56,6 +56,10 @@ public class Stage2Script : MonoBehaviour
 				SceneManager.LoadScene(3);
 			}
 		}
+
+		if(Input.GetKeyDown(KeyCode.H)){
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	void OnTriggerEnter(Collider other){
