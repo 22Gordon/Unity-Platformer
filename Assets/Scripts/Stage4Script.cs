@@ -48,14 +48,7 @@ public class Stage4Script : MonoBehaviour
 
 		if (rb.transform.position.y <= -4)
 		{
-			if(checkpoint)
-            {
-				rb.transform.position = new Vector3(11.25f, 2.52f, 41.26f);
-			}
-			else
-            {
-				SceneManager.LoadScene(7);
-			}
+			SceneManager.LoadScene(7);
 		}
 	}
 
